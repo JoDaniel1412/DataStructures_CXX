@@ -7,17 +7,30 @@
 
 #include "Node.h"
 
+template<class T>
 class List {
 
 private:
-    Node *head = nullptr;
-    Node *tail = nullptr;
+    Node<T> *head = nullptr;
+    Node<T> *tail = nullptr;
     int size = 0;
 
 public:
-    List();
+    List() = default;
 
     ~List();
+
+    int value(int index);
+
+    void printList();
+
+    void pushHead(T value);
+
+    void pushTail(T value);
+
+    void deleteValue(int index);
+
+    void clean();
 
     int getHead();
 
@@ -25,20 +38,8 @@ public:
 
     int getSize();
 
-    int getValue(int index);
-
-    void printList();
-
-    void pushHead(int value);
-
-    void pushTail(int value);
-
-    void deleteValue(int index);
-
-    void clean();
-
 private:
-    Node* getNode(int index);
+    auto *getNode(int index);
 
 };
 

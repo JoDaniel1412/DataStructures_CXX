@@ -3,12 +3,14 @@
 //
 
 #include <gtest/gtest.h>
-#include "../../src/Headers/list/List.h"
-
+#include "../../src/list/List.h"
+/**
 struct ListTest : testing::Test {
-    List *list;
+    List<int> *list;
 
-    ListTest() : list(new List) {
+    ListTest() {
+        list = new List<int>;
+
         // Fills the list : [3, 4, 5, 6]
         list->pushTail(4);
         list->pushTail(5);
@@ -40,26 +42,26 @@ EXPECT_EQ(list->getTail(), 7);
 
 TEST_F(ListTest, GetValue_Test) { // [3, 4, 5, 6]
 
-EXPECT_EQ(list->getValue(0), 3);
-EXPECT_EQ(list->getValue(3), 6);
+EXPECT_EQ(list->value(0), 3);
+EXPECT_EQ(list->value(3), 6);
 
-EXPECT_ANY_THROW(list->getValue(-1));
-EXPECT_ANY_THROW(list->getValue(6));
+EXPECT_ANY_THROW(list->value(-1));
+EXPECT_ANY_THROW(list->value(6));
 }
 
 TEST_F(ListTest, DeleteValue_Test) {  // [3, 4, 5, 6]
 
 list->deleteValue(2);
-EXPECT_TRUE(list->getValue(2) != 5);
+EXPECT_TRUE(list->value(2) != 5);
 EXPECT_EQ(list->getSize(), 3);
 
 list->deleteValue(0); // Deletes the head from the clist
 EXPECT_EQ(list->getHead(), 4);
 EXPECT_EQ(list->getSize(), 2);
 
-EXPECT_ANY_THROW(list->getValue(2));
+EXPECT_ANY_THROW(list->value(2));
 
 list->deleteValue(1);
 EXPECT_EQ(list->getTail(), list->getHead()); // Deletes the tail and left the clist in one element
 EXPECT_EQ(list->getSize(), 1);
-}
+}**/
