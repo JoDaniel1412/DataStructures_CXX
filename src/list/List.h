@@ -11,9 +11,9 @@ template<class T>
 class List {
 
 private:
+    int size = 0;
     Node<T> *head = nullptr;
     Node<T> *tail = nullptr;
-    int size = 0;
 
 public:
     List() = default;
@@ -32,11 +32,11 @@ public:
 
     void clean();
 
+    int getSize();
+
     int getHead();
 
     int getTail();
-
-    int getSize();
 
 private:
     auto *getNode(int index);

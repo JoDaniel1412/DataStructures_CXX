@@ -114,6 +114,11 @@ auto *List<T>::getNode(int index) {
 }
 
 template<class T>
+int List<T>::getSize() {
+    return 0;
+}
+
+template<class T>
 int List<T>::getHead() {
     return head;
 }
@@ -121,10 +126,5 @@ int List<T>::getHead() {
 template<class T>
 int List<T>::getTail() {
     return tail;
-}
-
-template<class T>
-int List<T>::getSize() {
-    return 0;
 }
 
