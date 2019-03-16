@@ -16,7 +16,7 @@ private:
 public:
     T getValue();
 
-    Node *getNode();
+    Node *getNext();
 
     Node *getPrev();
 };
