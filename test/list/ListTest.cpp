@@ -3,13 +3,13 @@
 //
 
 #include <gtest/gtest.h>
-#include "../../src/list/List.h"
-/**
+#include "List.h"
+
 struct ListTest : testing::Test {
     List<int> *list;
 
     ListTest() {
-        list = new List<int>;
+        list = new List<int>();
 
         // Fills the list : [3, 4, 5, 6]
         list->pushTail(4);
@@ -24,9 +24,9 @@ struct ListTest : testing::Test {
 TEST_F(ListTest, PushHead_PushTail_Test) {
 list->clean();
 
-EXPECT_EQ(0, list->getSize()); // Empty clist
+EXPECT_EQ(0, list->getSize()); // Empty list
 
-// Fills the clist
+// Fills the list
 list->pushTail(4);
 list->pushTail(5);
 list->pushHead(3);
@@ -55,13 +55,13 @@ list->deleteValue(2);
 EXPECT_TRUE(list->value(2) != 5);
 EXPECT_EQ(list->getSize(), 3);
 
-list->deleteValue(0); // Deletes the head from the clist
+list->deleteValue(0); // Deletes the head from the list
 EXPECT_EQ(list->getHead(), 4);
 EXPECT_EQ(list->getSize(), 2);
 
 EXPECT_ANY_THROW(list->value(2));
 
 list->deleteValue(1);
-EXPECT_EQ(list->getTail(), list->getHead()); // Deletes the tail and left the clist in one element
+EXPECT_EQ(list->getTail(), list->getHead()); // Deletes the tail and left the list in one element
 EXPECT_EQ(list->getSize(), 1);
-}**/
+}

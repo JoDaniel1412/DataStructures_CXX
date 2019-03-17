@@ -9,17 +9,35 @@ template<class T>
 class Node {
 
 private:
-    T value = nullptr;
-    Node *next = nullptr;
-    Node *prev = nullptr;
+    T value;
+    Node<T> *next;
+    Node<T> *prev;
 
 public:
-    T getValue();
+    // Constructors
 
-    Node *getNext();
+    Node();
 
-    Node *getPrev();
+    explicit Node(T value);
+
+    Node(T value, Node<T> *next, Node<T> *prev);
+
+
+    // Methods
+
+    T getValue() const;
+
+    void setValue(T value);
+
+    Node<T> *getNext();
+
+    void setNext(Node<T> *next);
+
+    Node<T> *getPrev();
+
+    void setPrev(Node<T> *prev);
+
 };
 
-
+#include "Node_impl.h"
 #endif //DATASTRUCTURES_CXX_NODE_H

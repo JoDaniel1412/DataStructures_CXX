@@ -20,7 +20,7 @@ public:
 
     ~List();
 
-    int value(int index);
+    T value(int index);
 
     void printList();
 
@@ -34,14 +34,15 @@ public:
 
     int getSize();
 
-    int getHead();
+    Node<T> *getHead();
 
-    int getTail();
+    Node<T> *getTail();
 
 private:
     auto *getNode(int index);
 
 };
 
+#include "List_impl.h"
 
 #endif //DATASTRUCTURES_CXX_LIST_H

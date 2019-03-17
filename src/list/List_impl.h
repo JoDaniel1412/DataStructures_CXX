@@ -11,7 +11,7 @@ template<class T>
 List<T>::~List() { clean(); };
 
 template<class T>
-int List<T>::value(int index) {
+T List<T>::value(int index) {
     if (index > size - 1) throw invalid_argument("Index out of range");
     if (index < 0) throw invalid_argument("Index cannot be less than 0");
 
@@ -115,16 +115,16 @@ auto *List<T>::getNode(int index) {
 
 template<class T>
 int List<T>::getSize() {
-    return 0;
+    return size;
 }
 
 template<class T>
-int List<T>::getHead() {
+Node<T> *List<T>::getHead() {
     return head;
 }
 
 template<class T>
-int List<T>::getTail() {
+Node<T> *List<T>::getTail() {
     return tail;
 }
 
