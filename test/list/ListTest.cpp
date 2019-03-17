@@ -36,8 +36,8 @@ list->pushTail(7);
 list->pushHead(1);
 
 EXPECT_EQ(list->getSize(), 7);
-EXPECT_EQ(list->getHead(), 1);
-EXPECT_EQ(list->getTail(), 7);
+EXPECT_EQ(list->getHead()->getValue(), 1);
+EXPECT_EQ(list->getTail()->getValue(), 7);
 }
 
 TEST_F(ListTest, GetValue_Test) { // [3, 4, 5, 6]
@@ -56,7 +56,7 @@ EXPECT_TRUE(list->value(2) != 5);
 EXPECT_EQ(list->getSize(), 3);
 
 list->deleteValue(0); // Deletes the head from the list
-EXPECT_EQ(list->getHead(), 4);
+EXPECT_EQ(list->getHead()->getValue(), 4);
 EXPECT_EQ(list->getSize(), 2);
 
 EXPECT_ANY_THROW(list->value(2));
