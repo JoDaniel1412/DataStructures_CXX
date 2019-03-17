@@ -25,7 +25,7 @@ public:
 
     // Methods
 
-    T getValue() const;
+    T getValue();
 
     void setValue(T value);
 
@@ -40,4 +40,5 @@ public:
 };
 
 #include "Node_impl.h"
+
 #endif //DATASTRUCTURES_CXX_NODE_H

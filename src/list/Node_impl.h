@@ -25,7 +25,7 @@ Node<T>::Node(T value, Node<T> *next, Node<T> *prev) {
 }
 
 template<class T>
-T Node<T>::getValue() const {
+T Node<T>::getValue() {
     return value;
 }
 
