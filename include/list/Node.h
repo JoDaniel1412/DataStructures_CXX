@@ -41,6 +41,6 @@ private:
 
 };
 
-#include "list/Node_impl.h"
+#include "../../src/list/Node_impl.h"
 
 #endif //DATASTRUCTURES_CXX_NODE_H

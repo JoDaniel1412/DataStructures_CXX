@@ -44,6 +44,6 @@ private:
 
 };
 
-#include "list/List_impl.h"
+#include "../../src/list/List_impl.h"
 
 #endif //DATASTRUCTURES_CXX_LIST_H
