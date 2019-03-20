@@ -15,9 +15,8 @@ add_executable(DataStructures_CXX test/main.cpp
 add_subdirectory(lib/googletest)
 include_directories(lib/googletest/googletest/include)
 include_directories(lib/googletest/googlemock/include)
-
 target_link_libraries(DataStructures_CXX gtest gtest_main)
 
-#List Include #
+#Dir Include #
 include_directories(include)
 include_directories(src)

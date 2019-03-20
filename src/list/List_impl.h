@@ -2,24 +2,26 @@
 // Created by José Acuña on 15/03/2019.
 //
 
-#include "../../include/list/List.h"
+#include "list/List.h"
 #include <iostream>
 
 using namespace std;
 
 template<class T>
-List<T>::~List() { clean(); };
+List<T>::List() {
+    size = 0;
+    head = nullptr;
+    tail = nullptr;
+}
+
+template<class T>
+List<T>::~List() { clean(); }
 
 template<class T>
 T List<T>::value(int index) {
-    if (index > size - 1) throw invalid_argument("Index out of range");
-    if (index < 0) throw invalid_argument("Index cannot be less than 0");
-
     Node<T> *node = getNode(index);
-
     return node->getValue();
 }
-
 
 template<class T>
 void List<T>::pushHead(T value) {
@@ -63,10 +65,7 @@ void List<T>::printList() {
 
 template<class T>
 void List<T>::deleteValue(int index) {
-    if (index > size - 1) throw invalid_argument("Index out of range");
-    if (index < 0) throw invalid_argument("Index cannot be less than 0");
-
-    Node<T> *node = getNode(index);
+    Node<T> *node = getNode(index);  // Gets the node in the index
 
     // Switch the node pointers
     Node<T> *nextNode = node->getNext();
@@ -97,7 +96,10 @@ void List<T>::clean() {
 }
 
 template<class T>
-auto *List<T>::getNode(int index) {
+Node<T> *List<T>::getNode(int index) {
+    if (index > size - 1) throw invalid_argument("Index out of range");
+    if (index < 0) throw invalid_argument("Index cannot be less than 0");
+
     Node<T> *node;
     if (index < size / 2) { // Search the node from the Head
         node = head;
@@ -127,4 +129,3 @@ template<class T>
 Node<T> *List<T>::getTail() {
     return tail;
 }
-

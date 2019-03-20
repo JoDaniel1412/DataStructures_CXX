@@ -8,11 +8,6 @@
 template<class T>
 class Node {
 
-private:
-    T value;
-    Node<T> *next;
-    Node<T> *prev;
-
 public:
     // Constructors
 
@@ -21,6 +16,8 @@ public:
     explicit Node(T value);
 
     Node(T value, Node<T> *next, Node<T> *prev);
+
+    ~Node();
 
 
     // Methods
@@ -36,6 +33,11 @@ public:
     Node<T> *getPrev();
 
     void setPrev(Node<T> *prev);
+
+private:
+    T value;
+    Node<T> *next;
+    Node<T> *prev;
 
 };
 

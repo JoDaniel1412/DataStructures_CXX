@@ -10,13 +10,8 @@
 template<class T>
 class List {
 
-private:
-    int size = 0;
-    Node<T> *head = nullptr;
-    Node<T> *tail = nullptr;
-
 public:
-    List() = default;
+    List();
 
     ~List();
 
@@ -38,8 +33,14 @@ public:
 
     Node<T> *getTail();
 
+    Node<T> *getNode(int index);
+
+
 private:
-    auto *getNode(int index);
+    int size;
+    Node<T> *head;
+    Node<T> *tail;
+
 
 };
 
