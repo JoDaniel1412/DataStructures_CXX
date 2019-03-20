@@ -25,12 +25,6 @@ Node<T>::Node(T value, Node<T> *next, Node<T> *prev) {
 }
 
 template<class T>
-Node<T>::~Node() {
-    delete next;
-    delete prev;
-}
-
-template<class T>
 T Node<T>::getValue() {
     return value;
 }

@@ -17,7 +17,7 @@ public:
 
     Node(T value, Node<T> *next, Node<T> *prev);
 
-    ~Node();
+    ~Node() = default;
 
 
     // Methods

@@ -89,9 +89,8 @@ void List<T>::clean() {
         Node<T> *tmp = node;
         node = node->getNext();
         delete tmp;
-        size--;
     }
-
+    size = 0;
     head = nullptr;
 }
 

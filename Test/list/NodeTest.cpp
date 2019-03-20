@@ -14,3 +14,8 @@ TEST(NodeTest, GetSetValue_Test) {
 
     EXPECT_EQ(node.getValue(), 6);
 }
+
+TEST(NodeTest, Delete_Test) {
+    Node<int> *node = new Node<int>(3);
+    delete node;
+}
