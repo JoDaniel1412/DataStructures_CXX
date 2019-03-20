@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
-project(DataStructures_CXX)
+project(dstructures)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DataStructures_CXX src/main.cpp
+add_executable(dstructures src/main.cpp
         src/list/List_impl.h
         include/list/List.h
         src/list/Node_impl.h
