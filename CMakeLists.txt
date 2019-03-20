@@ -10,9 +10,7 @@ add_executable(DataStructures_CXX src/main.cpp
         include/list/Node.h)
 
 # Add Test if googletest is not empty
-file(GLOB RESULT Test/lib/googletest)
-list(LENGTH RESULT RES_LEN)
-if (RES_LEN GREATER 0)
+if (EXISTS Test/lib/googletest)
     add_subdirectory(Test)
 endif ()
 
