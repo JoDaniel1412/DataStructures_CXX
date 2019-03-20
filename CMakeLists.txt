@@ -9,8 +9,12 @@ add_executable(DataStructures_CXX src/main.cpp
         src/list/Node_impl.h
         include/list/Node.h)
 
-# Add subdirectories
-add_subdirectory(Test)
+# Add Test if googletest is not empty
+file(GLOB RESULT Test/lib/googletest)
+list(LENGTH RESULT RES_LEN)
+if (RES_LEN GREATER 0)
+    add_subdirectory(Test)
+endif ()
 
 # Include directories #
 include_directories(include)
