@@ -2,7 +2,7 @@
 // Created by José Acuña on 15/03/2019.
 //
 
-#include "List.h"
+#include "../../include/list/List.h"
 #include <iostream>
 
 using namespace std;

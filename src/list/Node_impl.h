@@ -2,7 +2,7 @@
 // Created by José Acuña on 16/03/2019.
 //
 
-#include "Node.h"
+#include "../../include/list/Node.h"
 
 template<class T>
 Node<T>::Node() {

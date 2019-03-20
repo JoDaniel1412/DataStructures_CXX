@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "Node.h"
+#include "../../include/list/Node.h"
 
 TEST(NodeTest, GetSetValue_Test) {
     Node<int> node = Node<int>(4);

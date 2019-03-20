@@ -3,20 +3,21 @@ project(DataStructures_CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DataStructures_CXX src/main.cpp
+add_executable(DataStructures_CXX test/main.cpp
         src/list/List_impl.h
-        src/list/List.h
+        include/list/List.h
         src/list/Node_impl.h
-        src/list/Node.h
+        include/list/Node.h
 
         test/list/ListTest.cpp test/list/NodeTest.cpp)
 
 # GoogleTest Include #
-add_subdirectory(lib/googletest-master)
-include_directories(lib/googletest-master/googletest/include)
-include_directories(lib/googletest-master/googlemock/include)
+add_subdirectory(lib/googletest)
+include_directories(lib/googletest/googletest/include)
+include_directories(lib/googletest/googlemock/include)
 
 target_link_libraries(DataStructures_CXX gtest gtest_main)
 
 #List Include #
-include_directories(src/list)
+include_directories(include)
+include_directories(src)
