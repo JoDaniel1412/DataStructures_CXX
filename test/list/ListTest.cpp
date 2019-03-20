@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "../../include/list/List.h"
+#include "list/List.h"
 
 struct ListTest : testing::Test {
     List<int> *list;
