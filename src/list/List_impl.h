@@ -86,8 +86,8 @@ int List<T>::index(T value) {
     int index = -1;
     Node<T> *node = head;
 
-    for (int i = 0; i < size - 1; i++) {
-        if(node == value) {
+    for (int i = 0; i < size; i++) {
+        if(node->getValue() == value) {
             index = i;
             break;
         }

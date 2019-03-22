@@ -65,3 +65,15 @@ TEST_F(ListTest, DeleteValue_Test) {  // [3, 4, 5, 6]
     EXPECT_EQ(list->getTail(), list->getHead()); // Deletes the tail and left the list in one element
     EXPECT_EQ(list->getSize(), 1);
 }
+
+TEST_F(ListTest, Index_Test) { // [3, 4, 5, 6]
+
+    EXPECT_EQ(list->index(3), 0);
+    EXPECT_EQ(list->index(6), 3);
+
+    list->pushTail(7);
+    EXPECT_EQ(list->index(6), 3);
+    EXPECT_EQ(list->index(7), 4);
+
+    EXPECT_EQ(list->index(12), -1);
+}
