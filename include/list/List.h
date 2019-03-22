@@ -15,17 +15,41 @@ public:
 
     ~List();
 
+    /**
+     * Search for the Object in the index specified
+     * @param index position in the list
+     * @return the Object in the index
+     */
     T value(int index);
 
-    void printList();
-
+    /**
+     * Add a value at the beginning of the the list
+     * @param value the Object to add
+     */
     void pushHead(T value);
 
+    /**
+     * Add a value at the end of the the list
+     * @param value the Object to add
+     */
     void pushTail(T value);
 
-    void deleteValue(int index);
+    /**
+     * Deletes the Object in certain index
+     * @param index the position of the Object to remove
+     */
+    void remove(int index);
+
+    /**
+     * Looks for the first appearance of the Object
+     * @param value the Object to search
+     * @return the position of the Object and -1 if isn't found
+     */
+    int index(T value);
 
     void clean();
+
+    void print();
 
     int getSize();
 

@@ -51,17 +51,17 @@ TEST_F(ListTest, GetValue_Test) { // [3, 4, 5, 6]
 
 TEST_F(ListTest, DeleteValue_Test) {  // [3, 4, 5, 6]
 
-    list->deleteValue(2);
+    list->remove(2);
     EXPECT_TRUE(list->value(2) != 5);
     EXPECT_EQ(list->getSize(), 3);
 
-    list->deleteValue(0); // Deletes the head from the list
+    list->remove(0); // Deletes the head from the list
     EXPECT_EQ(list->getHead()->getValue(), 4);
     EXPECT_EQ(list->getSize(), 2);
 
     EXPECT_ANY_THROW(list->value(2));
 
-    list->deleteValue(1);
+    list->remove(1);
     EXPECT_EQ(list->getTail(), list->getHead()); // Deletes the tail and left the list in one element
     EXPECT_EQ(list->getSize(), 1);
 }

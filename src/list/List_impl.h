@@ -52,7 +52,7 @@ void List<T>::pushTail(T value) {
 }
 
 template<class T>
-void List<T>::printList() {
+void List<T>::print() {
     Node<T> *node = head;
 
     while (node) {
@@ -64,7 +64,7 @@ void List<T>::printList() {
 }
 
 template<class T>
-void List<T>::deleteValue(int index) {
+void List<T>::remove(int index) {
     Node<T> *node = getNode(index);  // Gets the node in the index
 
     // Switch the node pointers
@@ -79,6 +79,22 @@ void List<T>::deleteValue(int index) {
 
     delete node;
     size--;
+}
+
+template<class T>
+int List<T>::index(T value) {
+    int index = -1;
+    Node<T> *node = head;
+
+    for (int i = 0; i < size - 1; i++) {
+        if(node == value) {
+            index = i;
+            break;
+        }
+        node = node->getNext();
+    }
+
+    return index;
 }
 
 template<class T>
